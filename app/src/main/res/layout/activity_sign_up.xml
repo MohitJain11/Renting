@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginActivity">
-
+    tools:context=".SignUpActivity">
     <LinearLayout
         android:id="@+id/ll_include_header"
         android:layout_width="match_parent"
@@ -41,7 +39,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="Sign In"
+                android:text="Sign Up"
                 android:textColor="#ffffff"
                 android:textSize="30sp" />
         </RelativeLayout>
@@ -54,7 +52,6 @@
         </RelativeLayout>
     </LinearLayout>
 
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_margin="20dp"
@@ -65,6 +62,7 @@
         android:layout_centerHorizontal="true"
         app:layout_anchor="@+id/ll_include_header"
         app:layout_anchorGravity="center_horizontal|top"
+        android:background="background_shadow"
         android:layout_weight="1">
 
         <LinearLayout
@@ -81,7 +79,17 @@
             android:orientation="vertical"
             android:paddingRight="20dp"
             android:background="@color/white"
-            android:layout_weight="2">
+            android:layout_weight="3">
+
+            <EditText
+                android:id="@+id/et_user_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25sp"
+                android:hint="Name"
+                android:inputType="text"
+                android:text=""
+                android:textColorHint="@color/light_black" />
 
             <EditText
                 android:id="@+id/et_email"
@@ -103,23 +111,26 @@
                 android:text=""
                 android:textColorHint="@color/light_black" />
 
+            <EditText
+                android:id="@+id/et_reenter_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25sp"
+                android:hint="ReEnter Password"
+                android:inputType="text"
+                android:text=""
+                android:textColorHint="@color/light_black" />
+
             <Button
-                android:id="@+id/button_login"
+                android:id="@+id/button_signup"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="30sp"
                 android:background="@drawable/button_shape"
-                android:text="Sign In"
+                android:text="Sign Up"
                 android:textColor="#ffffff"
                 android:textSize="20sp" />
 
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:background="@color/white"
-            android:layout_weight="1">
         </LinearLayout>
 
     </LinearLayout>
