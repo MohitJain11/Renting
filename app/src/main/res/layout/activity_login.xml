@@ -43,7 +43,7 @@
                 android:gravity="center"
                 android:text="Sign In"
                 android:textColor="#ffffff"
-                android:textSize="30sp" />
+                android:textSize="20dp" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -75,7 +75,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:elevation="40dp"
+            android:elevation="5dp"
             android:layout_height="0dp"
             android:paddingLeft="20dp"
             android:orientation="vertical"
@@ -84,17 +84,17 @@
             android:layout_weight="2">
 
             <EditText
-                android:id="@+id/et_email"
+                android:id="@+id/et_user_email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="25sp"
+                android:layout_marginTop="35sp"
                 android:hint="Email"
                 android:inputType="text"
                 android:text=""
                 android:textColorHint="@color/light_black" />
 
             <EditText
-                android:id="@+id/et_password"
+                android:id="@+id/et_user_password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="25sp"
@@ -109,19 +109,30 @@
                 android:layout_height="50dp"
                 android:layout_marginTop="30sp"
                 android:background="@drawable/button_shape"
-                android:text="Sign In"
+                android:text="Log In"
                 android:textColor="#ffffff"
                 android:textSize="20sp" />
-
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:background="@color/white"
-            android:layout_weight="1">
+            android:orientation="horizontal"
+            android:layout_marginTop="15dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Create a new account?"/>
+            <TextView
+                android:paddingLeft="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_signup"
+                android:text="Sign Up"
+                android:textColor="@color/logo_blue"/>
         </LinearLayout>
-
     </LinearLayout>
 
 
