@@ -1,8 +1,10 @@
-package com.example.renting;
+package com.example.renting.interfaces;
 
 import com.example.renting.models.LoginResult;
+import com.example.renting.models.ProductModel;
 
 import java.util.HashMap;
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
@@ -17,4 +19,7 @@ public interface RetrofitInterface {
 
     @POST("/add_product")
     Call<Void> executeAddProduct (@Body HashMap<String, String> map);
+
+    @POST("/get_products")
+    Call<List<ProductModel>> executeGetProduct (@Body HashMap<String, String> map);
 }

@@ -1,4 +1,4 @@
-package com.example.renting;
+package com.example.renting.models;
 
 public class LoginResult {
     private String user_name;

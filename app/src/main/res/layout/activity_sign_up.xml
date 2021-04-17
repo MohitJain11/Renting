@@ -91,11 +91,11 @@
                 android:textColorHint="@color/light_black" />
 
             <EditText
-                android:id="@+id/et_user_email"
+                android:id="@+id/et_user_mobile"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="25sp"
-                android:hint="Email"
+                android:hint="Mobile No."
                 android:inputType="text"
                 android:text=""
                 android:textColorHint="@color/light_black" />

@@ -56,6 +56,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
+            android:id="@+id/ll_search_bar"
             android:layout_height="wrap_content"
             android:gravity="center|right">
 
@@ -71,6 +72,23 @@
                 android:hint="  Search"
                 android:drawableLeft="@drawable/search_icon" >
             </EditText>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:id="@+id/ll_products"
+            android:layout_marginRight="10dp"
+            android:layout_below="@+id/ll_search_bar"
+            android:layout_height="match_parent">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_products"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbars="vertical" />
 
         </LinearLayout>
 
