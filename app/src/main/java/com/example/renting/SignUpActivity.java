@@ -26,8 +26,9 @@ public class SignUpActivity extends AppCompatActivity {
     TextView tv_login;
     private Retrofit retrofit;
     private RetrofitInterface retrofitInterface;
-    private String BASE_URL="http://192.168.43.193:3000";
+    private String BASE_URL = RetrofitInterface.BASE_URL;
     EditText et_user_name, et_user_mobile, et_user_password, et_user_reenter_password;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,19 +57,20 @@ public class SignUpActivity extends AppCompatActivity {
                 call.enqueue(new Callback<Void>() {
                     @Override
                     public void onResponse(Call<Void> call, Response<Void> response) {
-                        if(response.code() == 200){
+                        if (response.code() == 200) {
                             Toast.makeText(SignUpActivity.this, "Signup Successfuly", Toast.LENGTH_SHORT).show();
                             //Setting Shared Pref...
                             SharedPreferences.Editor editor = getSharedPreferences("LoginData", MODE_PRIVATE).edit();
                             editor.putString("user_mobile", et_user_mobile.getText().toString());
                             editor.putString("user_name", et_user_name.getText().toString());
+                            editor.putString("user_fund", "0");
                             editor.putString("isLogin", "yes");
                             editor.commit();
 
                             Intent intent = new Intent(SignUpActivity.this, DashboardActivity.class);
                             startActivity(intent);
                             finish();
-                        } else if(response.code() == 400){
+                        } else if (response.code() == 400) {
                             Toast.makeText(SignUpActivity.this, "Already Registered", Toast.LENGTH_SHORT).show();
                         }
                     }

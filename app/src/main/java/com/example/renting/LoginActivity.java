@@ -29,8 +29,9 @@ public class LoginActivity extends AppCompatActivity {
     TextView tv_signup;
     private Retrofit retrofit;
     private RetrofitInterface retrofitInterface;
-    private String BASE_URL="http://192.168.43.193:3000";
+    private String BASE_URL = RetrofitInterface.BASE_URL;
     EditText et_user_mobile, et_user_password;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -69,13 +70,14 @@ public class LoginActivity extends AppCompatActivity {
                 call.enqueue(new Callback<LoginResult>() {
                     @Override
                     public void onResponse(Call<LoginResult> call, Response<LoginResult> response) {
-                        if(response.code()==200){
-                            LoginResult loginResult =response.body();
-                            Toast.makeText(LoginActivity.this, loginResult.getUser_name(), Toast.LENGTH_SHORT).show();
+                        if (response.code() == 200) {
+                            LoginResult loginResult = response.body();
+//                            Toast.makeText(LoginActivity.this, loginResult.getUser_name(), Toast.LENGTH_SHORT).show();
                             //Setting Shared Pref...
                             SharedPreferences.Editor editor = getSharedPreferences("LoginData", MODE_PRIVATE).edit();
                             editor.putString("user_mobile", et_user_mobile.getText().toString());
                             editor.putString("user_name", loginResult.getUser_name().toString());
+                            editor.putString("user_fund", loginResult.getUser_fund().toString());
                             editor.putString("isLogin", "yes");
                             editor.commit();
 
@@ -87,6 +89,7 @@ public class LoginActivity extends AppCompatActivity {
                             Toast.makeText(LoginActivity.this, "Wrong Credentials", Toast.LENGTH_SHORT).show();
                         }
                     }
+
                     @Override
                     public void onFailure(Call<LoginResult> call, Throwable t) {
                         Toast.makeText(LoginActivity.this, t.getMessage(), Toast.LENGTH_LONG).show();
