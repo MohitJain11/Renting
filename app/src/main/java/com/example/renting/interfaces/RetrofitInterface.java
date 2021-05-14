@@ -13,8 +13,8 @@ import retrofit2.http.Body;
 import retrofit2.http.POST;
 
 public interface RetrofitInterface {
-    public static String BASE_URL = "http://192.168.88.210:3000"; //wifi
-//    public static String BASE_URL = "http://192.168.43.193:3000"; //mobile-jio
+//    public static String BASE_URL = "http://192.168.88.207:3000"; //wifi
+    public static String BASE_URL = "http://192.168.43.193:3000"; //mobile-jio
 
     @POST("/login")
     Call<LoginResult> executeLogin (@Body HashMap<String, String> map);
