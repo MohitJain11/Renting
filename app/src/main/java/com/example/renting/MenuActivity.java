@@ -24,10 +24,10 @@ public class MenuActivity extends AppCompatActivity {
         tv_user_name = findViewById(R.id.tv_user_name);
         ll_sign_out = findViewById(R.id.ll_sign_out);
         ll_my_ads = findViewById(R.id.ll_my_ads);
-        ll_my_orders = findViewById(R.id.ll_my_orders);
+//        ll_my_orders = findViewById(R.id.ll_my_orders);
         ll_notification = findViewById(R.id.ll_notification);
         ll_funds = findViewById(R.id.ll_funds);
-        ll_profile = findViewById(R.id.ll_profile);
+//        ll_profile = findViewById(R.id.ll_profile);
 
         tv_user_name.setText(user_name);
         ll_funds.setOnClickListener(new View.OnClickListener() {
